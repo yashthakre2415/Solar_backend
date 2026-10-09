@@ -36,6 +36,7 @@ app.use('/admin',officerouter);
 app.use('/admin',chatrouter);
 app.use('/uploads', express.static('src/uploads'));
 
+
 app.listen(PORT,()=>{
     console.log(`server is running on ${PORT}`);
 })
