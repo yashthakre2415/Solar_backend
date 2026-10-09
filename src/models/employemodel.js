@@ -18,16 +18,7 @@ const getEmployeeById = (id, callback) => {
     db.query(sql, [id], callback);
 };
 
-const updateEmployee = (
-    id,
-    name,
-    mobile,
-    email,
-    designation,
-    address,
-    callback
-) => {
-
+const updateEmployee = (id,name,mobile,email,designation,address,callback) => {
     const sql = `
         UPDATE employees
         SET
@@ -39,11 +30,7 @@ const updateEmployee = (
         WHERE id = ?
     `;
 
-    db.query(
-        sql,
-        [name, mobile, email, designation, address, id],
-        callback
-    );
+    db.query(sql,[name, mobile, email, designation, address, id],callback);
 };
 
 const deleteEmployee = (id, callback) => {
@@ -54,4 +41,5 @@ const deleteEmployee = (id, callback) => {
 
     db.query(sql, [id], callback);
 };
+
 module.exports = {EmployeCreate,getAllEmployees,getEmployeeById,updateEmployee,deleteEmployee};
